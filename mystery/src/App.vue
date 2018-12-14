@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <b-navbar toggleable="md" type="dark" variant="dark">
+      <b-navbar-brand>DOGS</b-navbar-brand>
+      <b-navbar-nav>
+        <b-nav-item> <router-link to="/">Main</router-link> </b-nav-item>
+      </b-navbar-nav>
+    </b-navbar>
+    <b-container>
+      <router-view></router-view>
+    </b-container>
   </div>
 </template>
 
 <script>
-import Main from './components/Main.vue'
 
 export default {
   name: 'app',
-  components: {
-    Main
-  }
 }
 </script>

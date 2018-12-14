@@ -4,6 +4,8 @@ import BootstrapVue from 'bootstrap-vue'
 
 import App from './App.vue'
 import Main from './components/Main.vue'
+import LikedDogs from './components/LikedDogs.vue'
+import UnLikedDogs from './components/UnLikedDogs.vue'
 import store from './stores/main'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -15,7 +17,9 @@ Vue.config.productionTip = false;
 
 const router = new VueRouter({
   routes: [
-    {path: '/', component: Main}
+    {path: '/', component: Main},
+    {path: '/liked', component: LikedDogs},
+    {path: '/unliked', component: UnLikedDogs},
   ]
 });
 

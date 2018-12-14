@@ -46,7 +46,7 @@ const store = new Vuex.Store({
   },
   mutations: {
     ADD_DOG_MUTATION(state, dog) {
-      state.dogs.push(dog);
+      state.dogs.unshift(dog);
       localStorage.dogs = JSON.stringify(state.dogs);
     },
     LIKE_DOG_MUTATION(state, dog) {
@@ -65,8 +65,11 @@ const store = new Vuex.Store({
     }
   },
   getters: {
-    liked: state => {
-      return state.dogs.filter(dog => dog.liked);
+    liked_dogs: state => {
+      return state.dogs.filter(dog => dog.like);
+    },
+    unliked_dogs: state => {
+      return state.dogs.filter(dog => !dog.like);
     },
     all_dogs: state => {
       return state.dogs;

@@ -6,6 +6,8 @@ import App from './App.vue'
 import Main from './components/Main.vue'
 import LikedDogs from './components/LikedDogs.vue'
 import UnLikedDogs from './components/UnLikedDogs.vue'
+import DogMoreInfo from './components/DogMoreInfo.vue'
+
 import store from './stores/main'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -18,6 +20,7 @@ Vue.config.productionTip = false;
 const router = new VueRouter({
   routes: [
     {path: '/', component: Main},
+    {path: '/dog/:uuid', component: DogMoreInfo, name: 'dog-info'},
     {path: '/liked', component: LikedDogs},
     {path: '/unliked', component: UnLikedDogs},
   ]
